@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 #
 # Electrum - lightweight Bitcoin client
 # Copyright (C) 2012 thomasv@gitorious
@@ -54,8 +55,12 @@ else:
 #       So this does not work:   _(f"My name: {name}")
 #       instead use .format:     _("My name: {}").format(name)
 def _(msg: str, *, context=None) -> str:
+    dic = [('BTC', 'LTC'), ('Bitcoin', 'Litecoin'), ('bitcoin', 'litecoin'), ('比特币', '莱特币')]
     if msg == "":
         return ""  # empty string must not be translated. see #7158
+    # litecoin: replace bitcoin strings w/ litecoin strings
+    for b, l in dic:
+        msg = msg.replace(l, b)
     global language
     if context:
         contexts = [context]
@@ -68,7 +73,11 @@ def _(msg: str, *, context=None) -> str:
             if out != msg:  # found non-trivial translation
                 return out
         # else try without context
-    return language.gettext(msg)
+    # return injected litecoin strings
+    t = language.gettext(msg)
+    for b, l in dic:
+        t = t.replace(b, l)
+    return t
 
 
 def set_language(x: Optional[str]) -> None:
