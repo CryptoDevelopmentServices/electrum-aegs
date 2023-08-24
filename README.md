@@ -54,6 +54,14 @@ Install from your package manager (or from pip):
 $ sudo apt-get install python3-cryptography
 ```
 
+For fast blockchain verification,
+[scrypt](https://github.com/holgern/py-scrypt) is required.
+Install from your package manager (or from pip):
+
+```
+$ sudo apt-get install python3-scrypt
+```
+
 If you would like hardware wallet support,
 [see this](https://github.com/spesmilo/electrum-docs/blob/master/hardware-linux.rst).
 

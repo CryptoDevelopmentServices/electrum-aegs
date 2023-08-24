@@ -23,7 +23,7 @@ hiddenimports += collect_submodules('ckcc')
 hiddenimports += collect_submodules('bitbox02')
 hiddenimports += ['electrum.plugins.jade.jade']
 hiddenimports += ['electrum.plugins.jade.jadepy.jade']
-hiddenimports += ['PyQt5.QtPrintSupport']  # needed by Revealer
+hiddenimports += ['_scrypt', 'PyQt5.QtPrintSupport']  # needed by Revealer
 
 
 binaries = []
