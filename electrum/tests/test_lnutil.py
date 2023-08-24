@@ -748,13 +748,13 @@ class TestLNUtil(ElectrumTestCase):
         # accepted by getaddrinfo but not ipaddress.ip_address
         self.assertEqual(split_host_port("127.0.0:8000"), ("127.0.0", "8000"))
         self.assertEqual(split_host_port("127.0.0"), ("127.0.0", "9735"))
-        self.assertEqual(split_host_port("electrum.org:8000"), ("electrum.org", "8000"))
-        self.assertEqual(split_host_port("electrum.org"), ("electrum.org", "9735"))
+        self.assertEqual(split_host_port("electrum-ltc.org:8000"), ("electrum-ltc.org", "8000"))
+        self.assertEqual(split_host_port("electrum-ltc.org"), ("electrum-ltc.org", "9735"))
 
         with self.assertRaises(ConnStringFormatError):
-            split_host_port("electrum.org:8000:")
+            split_host_port("electrum-ltc.org:8000:")
         with self.assertRaises(ConnStringFormatError):
-            split_host_port("electrum.org:")
+            split_host_port("electrum-ltc.org:")
 
     def test_extract_nodeid(self):
         pubkey1 = ecc.GENERATOR.get_public_key_bytes(compressed=True)
@@ -935,7 +935,7 @@ class TestLNUtil(ElectrumTestCase):
                 is_initiator=True,
                 node_id=bfh('02bf82e22f99dcd7ac1de4aad5152ce48f0694c46ec582567f379e0adbf81e2d0f'),
                 privkey=bfh('7e634853dc47f0bc2f2e0d1054b302fcb414371ddbd889f29ba8aa4e8b62c772'),
-                host='lightning.electrum.org',
+                host='lightning.electrum-ltc.org',
                 port=9739,
                 channel_seed=bfh('ce9bad44ff8521d9f57fd202ad7cdedceb934f0056f42d0f3aa7a576b505332a'),
                 local_delay=1008,

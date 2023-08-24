@@ -52,7 +52,7 @@ if TYPE_CHECKING:
 
 ca_path = certifi.where()
 ssl_context = ssl.create_default_context(purpose=ssl.Purpose.SERVER_AUTH, cafile=ca_path)
-server = ServerProxy('https://cosigner.electrum.org/', allow_none=True, context=ssl_context)
+server = ServerProxy('https://cosigner.electrum-ltc.org/', allow_none=True, context=ssl_context) # TODO(LOSHY): look into this
 
 
 class Listener(util.DaemonThread):
