@@ -71,7 +71,7 @@ class BaseCrashReporter(Logger):
 
     def send_report(self, asyncio_loop, proxy, *, timeout=None) -> CrashReportResponse:
         # FIXME the caller needs to catch generic "Exception", as this method does not have a well-defined API...
-        if constants.net.GENESIS[-4:] not in ["4943", "e26f"] and ".electrum-ltc.org" in BaseCrashReporter.report_server:
+        if constants.net.GENESIS[-4:] not in ["29a0", "bfe2"] and ".electrum-ltc.org" in BaseCrashReporter.report_server:
             # Gah! Some kind of altcoin wants to send us crash reports.
             raise Exception(_("Missing report URL."))
         report = self.get_traceback_info()
