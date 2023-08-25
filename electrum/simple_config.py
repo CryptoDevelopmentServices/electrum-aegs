@@ -916,7 +916,7 @@ class SimpleConfig(Logger):
     BTC_AMOUNTS_PREC_POST_SAT = ConfigVar('amt_precision_post_satoshi', default=0, type_=int)
     BTC_AMOUNTS_ADD_THOUSANDS_SEP = ConfigVar('amt_add_thousands_sep', default=False, type_=bool)
 
-    BLOCK_EXPLORER = ConfigVar('block_explorer', default='Blockstream.info', type_=str)
+    BLOCK_EXPLORER = ConfigVar('block_explorer', default='Litecoin Space', type_=str)
     BLOCK_EXPLORER_CUSTOM = ConfigVar('block_explorer_custom', default=None)
     VIDEO_DEVICE_PATH = ConfigVar('video_device', default='default', type_=str)
     OPENALIAS_ID = ConfigVar('alias', default="", type_=str)
