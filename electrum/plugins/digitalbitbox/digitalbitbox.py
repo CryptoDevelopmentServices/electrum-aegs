@@ -704,7 +704,7 @@ class DigitalBitboxPlugin(HW_PluginBase):
         if purpose == HWD_SETUP_NEW_WALLET:
             client.setupRunning = True
         wizard.run_task_without_blocking_gui(
-            task=lambda: client.get_xpub("m/44'/0'", 'standard'))
+            task=lambda: client.get_xpub("m/44'/2'", 'standard'))
         return client
 
 
