@@ -23,14 +23,14 @@ is a TL;DR:
 
 ```
 $ sudo apt-get install libsecp256k1-dev
-$ python3 -m pip install --user ".[gui,crypto]"
+$ uv pip install ".[gui,crypto]"
 ```
 
 ### Not pure-python dependencies
 
 If you want to use the Qt interface, install the Qt dependencies:
 ```
-$ sudo apt-get install python3-pyqt5
+$ uv pip install PyQt5
 ```
 
 For elliptic curve operations,
@@ -51,7 +51,7 @@ Due to the need for fast symmetric ciphers,
 [cryptography](https://github.com/pyca/cryptography) is required.
 Install from your package manager (or from pip):
 ```
-$ sudo apt-get install python3-cryptography
+$ uv pip install cryptography
 ```
 
 For fast blockchain verification,
@@ -59,7 +59,7 @@ For fast blockchain verification,
 Install from your package manager (or from pip):
 
 ```
-$ sudo apt-get install python3-scrypt
+$ uv pip install scrypt
 ```
 
 If you would like hardware wallet support,
@@ -78,20 +78,24 @@ $ ./run_electrum
 
 You can also install Electrum on your system, by running this command:
 ```
-$ sudo apt-get install python3-setuptools python3-pip
-$ python3 -m pip install --user .
+$ sudo apt-get install python3-setuptools
+$ uv pip install .
 ```
 
 This will download and install the Python dependencies used by
 Electrum instead of using the 'packages' directory.
-It will also place an executable named `electrum` in `~/.local/bin`,
-so make sure that is on your `PATH` variable.
+It will also place an executable named `electrum` in your PATH.
 
 
 ### Development version (git clone)
 
 _(For OS-specific instructions, see [here for Windows](contrib/build-wine/README_windows.md),
 and [for macOS](contrib/osx/README_macos.md))_
+
+First, install uv if you haven't already:
+```
+$ curl -LsSf https://astral.sh/uv/install.sh | sh
+```
 
 Check out the code from GitHub:
 ```
@@ -102,7 +106,7 @@ $ git submodule update --init
 
 Run install (this should install dependencies):
 ```
-$ python3 -m pip install --user -e .
+$ uv pip install -e .
 ```
 
 Create translations (optional):
@@ -120,12 +124,12 @@ $ ./run_electrum
 
 Run unit tests with `pytest`:
 ```
-$ pytest electrum/tests -v
+$ uv run pytest electrum/tests -v
 ```
 
 To run a single file, specify it directly like this:
 ```
-$ pytest electrum/tests/test_bitcoin.py -v
+$ uv run pytest electrum/tests/test_bitcoin.py -v
 ```
 
 ## Creating Binaries
