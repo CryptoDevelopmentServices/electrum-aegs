@@ -64,17 +64,17 @@ You probably need to clear the cache: `rm -rf .buildozer/android/platform/build-
 ### How do I deploy on connected phone for quick testing?
 Assuming `adb` is installed:
 ```
-$ adb -d install -r dist/Electrum-*-arm64-v8a-debug.apk
-$ adb shell monkey -p org.electrum.electrum 1
+$ adb -d install -r dist/Electrum-LTC-*-arm64-v8a-debug.apk
+$ adb shell monkey -p com.litecoin.electrum 1
 ```
 
 
 ### How do I get an interactive shell inside docker?
 ```
 $ docker run -it --rm \
-    -v $PWD:/home/user/wspace/electrum \
+    -v $PWD:/home/user/wspace/electrum-ltc \
     -v $PWD/.buildozer/.gradle:/home/user/.gradle \
-    --workdir /home/user/wspace/electrum \
+    --workdir /home/user/wspace/electrum-ltc \
     electrum-android-builder-img
 ```
 
@@ -90,7 +90,7 @@ adb logcat | grep python
 ```
 Better `grep` but fragile because of `cut`:
 ```
-adb logcat | grep -F "`adb shell ps | grep org.electrum.electrum | cut -c14-19`"
+adb logcat | grep -F "`adb shell ps | grep com.litecoin.electrum | cut -c14-19`"
 ```
 
 
@@ -105,14 +105,14 @@ sudo apt-get install qml-module-qtquick-controls2 qml-module-qtquick-layouts \
 sudo apt-get install qtvirtualkeyboard-plugin
 ```
 
-Run electrum with the `-g` switch: `electrum -g qml`
+Run electrum with the `-g` switch: `electrum-ltc -g qml`
 
 ### The Kivy GUI can be run directly on Linux Desktop. How?
 Install Kivy.
 
 Build atlas: `(cd contrib/android/; make theming)`
 
-Run electrum with the `-g` switch: `electrum -g kivy`
+Run electrum with the `-g` switch: `electrum-ltc -g kivy`
 
 ### debug vs release build
 If you just follow the instructions above, you will build the apk
@@ -131,16 +131,16 @@ of Android does not let you access the internal storage of an app without root.
 To pull a file:
 ```
 $ adb shell
-adb$ run-as org.electrum.electrum ls /data/data/org.electrum.electrum/files/data
+adb$ run-as com.litecoin.electrum ls /data/data/com.litecoin.electrum/files/data
 adb$ exit
-$ adb exec-out run-as org.electrum.electrum cat /data/data/org.electrum.electrum/files/data/wallets/my_wallet > my_wallet
+$ adb exec-out run-as com.litecoin.electrum cat /data/data/com.litecoin.electrum/files/data/wallets/my_wallet > my_wallet
 ```
 To push a file:
 ```
 $ adb push ~/wspace/tmp/my_wallet /data/local/tmp
 $ adb shell
 adb$ ls -la /data/local/tmp
-adb$ run-as org.electrum.testnet.electrum cp /data/local/tmp/my_wallet /data/data/org.electrum.testnet.electrum/files/data/testnet/wallets/
+adb$ run-as com.litecoin.testnet.electrum cp /data/local/tmp/my_wallet /data/data/com.litecoin.testnet.electrum/files/data/testnet/wallets/
 adb$ rm /data/local/tmp/my_wallet
 ```
 
