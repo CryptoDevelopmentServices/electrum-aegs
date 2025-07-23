@@ -173,7 +173,7 @@ class SettingsDialog(QDialog, QtEventListener):
         # units
         units = base_units_list
         msg = (_('Base unit of your wallet.')
-               + '\n1 LTC = 1000 mLTC. 1 mLTC = 1000 uLTC. 1 uLTC = 100 sat.\n'
+               + '\n1 AEGS = 1000 mAEGS. 1 mAEGS = 1000 uAEGS. 1 uAEGS = 100 sat.\n'
                + _('This setting affects the Send tab, and all balance related fields.'))
         unit_label = HelpLabel(_('Base unit') + ':', msg)
         unit_combo = QComboBox()

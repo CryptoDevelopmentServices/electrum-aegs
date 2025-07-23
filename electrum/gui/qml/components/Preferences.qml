@@ -15,7 +15,7 @@ Pane {
 
     padding: 0
 
-    property var _baseunits: ['LTC','mLTC','uLTC','sat']
+    property var _baseunits: ['AEGS','mAEGS','uAEGS','sat']
 
     ColumnLayout {
         anchors.fill: parent

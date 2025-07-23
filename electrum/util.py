@@ -86,11 +86,11 @@ def all_subclasses(cls) -> Set:
 ca_path = certifi.where()
 
 
-base_units = {'LTC':8, 'mLTC':5, 'uLTC':2, 'sat':0}
+base_units = {'AEGS':8, 'mAEGS':5, 'uAEGS':2, 'sat':0}
 base_units_inverse = inv_dict(base_units)
-base_units_list = ['LTC', 'mLTC', 'uLTC', 'sat']  # list(dict) does not guarantee order
+base_units_list = ['AEGS', 'mAEGS', 'uAEGS', 'sat']  # list(dict) does not guarantee order
 
-DECIMAL_POINT_DEFAULT = 8  # LTC
+DECIMAL_POINT_DEFAULT = 8  # AEGS
 
 
 class UnknownBaseUnit(Exception): pass
