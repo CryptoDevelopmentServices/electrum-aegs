@@ -12,7 +12,7 @@ from electrum.bitcoin import address_to_script
 chain_file = 'mychain.pem'
 cert_file = 'mycert.pem'
 amount = 1000000
-address = "LSh322VzYj7CCSwQJXrP49Lvt2zktLjQbz"
+address = "Ax6c1E5ejVFP64mSLDu7tDZ8GGLdZXBYfZ"
 memo = "blah"
 out_file = "payreq"
 
