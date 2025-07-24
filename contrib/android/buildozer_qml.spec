@@ -1,13 +1,13 @@
 [app]
 
 # (str) Title of your application
-title = Electrum-LTC
+title = Electrum-AEGS
 
 # (str) Package name
 package.name = Electrum
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = com.litecoin
+package.domain = com.aegisum
 
 # (str) Source code where the main.py live
 source.dir = .

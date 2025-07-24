@@ -56,9 +56,9 @@ if [ ! -z "$ELECBUILD_COMMIT" ] ; then  # fresh clone (reproducible build)
 fi
 docker run -it \
     --name electrum-sdist-builder-cont \
-    -v "$PROJECT_ROOT_OR_FRESHCLONE_ROOT":/opt/electrum-ltc \
+    -v "$PROJECT_ROOT_OR_FRESHCLONE_ROOT":/opt/electrum-aegs \
     --rm \
-    --workdir /opt/electrum-ltc/contrib/build-linux/sdist \
+    --workdir /opt/electrum-aegs/contrib/build-linux/sdist \
     --env OMIT_UNCLEAN_FILES \
     electrum-sdist-builder-img \
     ./make_sdist.sh
