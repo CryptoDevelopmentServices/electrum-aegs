@@ -9,8 +9,8 @@ from .bitcoin import COIN, TOTAL_COIN_SUPPLY_LIMIT_IN_BTC
 from .lnaddr import lndecode, LnDecodeException
 
 # note: when checking against these, use .lower() to support case-insensitivity
-BITCOIN_BIP21_URI_SCHEME = 'litecoin'
-LIGHTNING_URI_SCHEME = 'lightningltc'
+BITCOIN_BIP21_URI_SCHEME = 'aegisum'
+LIGHTNING_URI_SCHEME = 'lightningaegs'
 
 
 class InvalidBitcoinURI(Exception):
@@ -25,12 +25,12 @@ def parse_bip21_URI(uri: str) -> dict:
 
     if ':' not in uri:
         if not bitcoin.is_address(uri):
-            raise InvalidBitcoinURI("Not a litecoin address")
+            raise InvalidBitcoinURI("Not a aegisum address")
         return {'address': uri}
 
     u = urllib.parse.urlparse(uri)
     if u.scheme.lower() != BITCOIN_BIP21_URI_SCHEME:
-        raise InvalidBitcoinURI("Not a litecoin URI")
+        raise InvalidBitcoinURI("Not a aegisum URI")
     address = u.path
 
     # python for android fails to parse query
@@ -47,7 +47,7 @@ def parse_bip21_URI(uri: str) -> dict:
     out = {k: v[0] for k, v in pq.items()}
     if address:
         if not bitcoin.is_address(address):
-            raise InvalidBitcoinURI(f"Invalid litecoin address: {address}")
+            raise InvalidBitcoinURI(f"Invalid aegisum address: {address}")
         out['address'] = address
     if 'amount' in out:
         am = out['amount']
