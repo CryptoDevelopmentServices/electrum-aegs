@@ -40,8 +40,8 @@ def read_json(filename, default):
     return r
 
 
-GIT_REPO_URL = "https://github.com/litecoin-foundation/electrum-ltc"
-GIT_REPO_ISSUES_URL = "https://github.com/litecoin-foundation/electrum-ltc/issues"
+GIT_REPO_URL = "https://github.com/CryptoDevelopmentServices/electrum-aegs"
+GIT_REPO_ISSUES_URL = "https://github.com/CryptoDevelopmentServices/electrum-aegs/issues"
 BIP39_WALLET_FORMATS = read_json('bip39_wallet_formats.json', [])
 
 
@@ -73,15 +73,15 @@ class BitcoinMainnet(AbstractNet):
     NET_NAME = "mainnet"
     TESTNET = False
     WIF_PREFIX = 0x80
-    ADDRTYPE_P2PKH = 48
-    ADDRTYPE_P2SH = 50
-    SEGWIT_HRP = "ltc"
+    ADDRTYPE_P2PKH = 24
+    ADDRTYPE_P2SH = 23
+    SEGWIT_HRP = "aegs"
     BOLT11_HRP = SEGWIT_HRP
-    GENESIS = "12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2"
+    GENESIS = "d01de46801bba7913c039b4feabb42878e0a3e24ceef2365ed2a8d780c5aa9cd"
     DEFAULT_PORTS = {'t': '50001', 's': '50002'}
     DEFAULT_SERVERS = read_json('servers.json', {})
     CHECKPOINTS = read_json('checkpoints.json', [])
-    BLOCK_HEIGHT_FIRST_LIGHTNING_CHANNELS = 497000
+    BLOCK_HEIGHT_FIRST_LIGHTNING_CHANNELS = 49700000
 
     XPRV_HEADERS = {
         'standard':    0x0488ade4,  # xprv
@@ -102,7 +102,7 @@ class BitcoinMainnet(AbstractNet):
     BIP44_COIN_TYPE = 2
     LN_REALM_BYTE = 0
     LN_DNS_SEEDS = [
-        'ltc.nodes.lightning.directory.',
+        'aegs.nodes.lightning.directory.',
         # TODO(loshy): replace with valid ln dns seeder
     ]
 
@@ -114,9 +114,9 @@ class BitcoinTestnet(AbstractNet):
     WIF_PREFIX = 0xbf
     ADDRTYPE_P2PKH = 111
     ADDRTYPE_P2SH = 58
-    SEGWIT_HRP = "tltc"
+    SEGWIT_HRP = "taegs"
     BOLT11_HRP = SEGWIT_HRP
-    GENESIS = "4966625a4b2851d9fdee139e56211a0d88575f59ed816ff5e6a63deb4e3e29a0"
+    GENESIS = "150d58fcb28f605e98d9d8de663b734e24f2bdab5e0f39223010bfb583762df1"
     DEFAULT_PORTS = {'t': '51001', 's': '51002'}
     DEFAULT_SERVERS = read_json('servers_testnet.json', {})
     CHECKPOINTS = read_json('checkpoints_testnet.json', [])
@@ -146,9 +146,9 @@ class BitcoinTestnet(AbstractNet):
 class BitcoinRegtest(BitcoinTestnet):
 
     NET_NAME = "regtest"
-    SEGWIT_HRP = "rltc"
+    SEGWIT_HRP = "raegs"
     BOLT11_HRP = SEGWIT_HRP
-    GENESIS = "530827f38f93b43ed12af0b3ad25a288dc02ed74d6d7857862df51fc56c416f9"
+    GENESIS = "d347ca1218939242a9e4dae9a8c1b2036384616c764a7f6aeed71e2cb98d252a"
     DEFAULT_SERVERS = read_json('servers_regtest.json', {})
     CHECKPOINTS = []
     LN_DNS_SEEDS = []
