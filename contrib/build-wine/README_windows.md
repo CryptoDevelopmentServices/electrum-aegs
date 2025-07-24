@@ -9,8 +9,8 @@
 
 ### 1. Check out the code from GitHub:
 ```
-> git clone https://github.com/litecoin-foundation/electrum-ltc.git
-> cd electrum-ltc
+> git clone https://github.com/CryptoDevelopmentServices/electrum-aegs.git
+> cd electrum-aegs
 > git submodule update --init
 ```
 

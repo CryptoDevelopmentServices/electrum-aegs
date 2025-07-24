@@ -6,8 +6,8 @@
 ;--------------------------------
 ;Variables
 
-  !define PRODUCT_NAME "Electrum-LTC"
-  !define PRODUCT_WEB_SITE "https://github.com/litecoin-foundation/electrum-ltc"
+  !define PRODUCT_NAME "Electrum-AEGS"
+  !define PRODUCT_WEB_SITE "https://github.com/CryptoDevelopmentServices/electrum-aegs"
   !define PRODUCT_PUBLISHER "Electrum Technologies GmbH"
   !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
 

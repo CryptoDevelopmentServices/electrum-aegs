@@ -73,7 +73,7 @@ def _(msg: str, *, context=None) -> str:
             if out != msg:  # found non-trivial translation
                 return out
         # else try without context
-    # return injected litecoin strings
+    # return injected aegisum strings
     t = language.gettext(msg)
     for b, l in dic:
         t = t.replace(b, l)

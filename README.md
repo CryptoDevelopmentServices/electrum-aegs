@@ -4,7 +4,7 @@
 Licence: MIT Licence
 Author: Thomas Voegtlin
 Language: Python (>= 3.8)
-Homepage: https://electrum-ltc.org/
+Homepage: https://electrum-aegs.org/
 ```
 
 [![Build Status](https://api.cirrus-ci.com/github/spesmilo/electrum.svg?branch=master)](https://cirrus-ci.com/github/spesmilo/electrum)
@@ -15,7 +15,7 @@ Homepage: https://electrum-ltc.org/
 ## Getting started
 
 _(If you've come here looking to simply run Electrum,
-[you may download it here](https://electrum-ltc.org/#download).)_
+[you may download it here](https://electrum-aegs.org/#download).)_
 
 Electrum itself is pure Python, and so are most of the required dependencies,
 but not everything. The following sections describe how to run from source, but here
@@ -99,8 +99,8 @@ $ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 Check out the code from GitHub:
 ```
-$ git clone https://github.com/litecoin-foundation/electrum-ltc.git
-$ cd electrum-ltc
+$ git clone https://github.com/CryptoDevelopmentServices/electrum-aegs.git
+$ cd electrum-aegs
 $ git submodule update --init
 ```
 
@@ -149,7 +149,7 @@ Implementing new features, or improving/refactoring the codebase, is of course
 also welcome, but to avoid wasted effort, especially for larger changes,
 we encourage discussing these on the issue tracker or IRC first.
 
-Besides [GitHub](https://github.com/litecoin-foundation/electrum-ltc),
+Besides [GitHub](https://github.com/CryptoDevelopmentServices/electrum-aegs),
 most communication about Electrum development happens on IRC, in the
 `#electrum` channel on Libera Chat. The easiest way to participate on IRC is
 with the web client, [web.libera.chat](https://web.libera.chat/#electrum).
