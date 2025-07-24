@@ -55,10 +55,10 @@ else:
 #       So this does not work:   _(f"My name: {name}")
 #       instead use .format:     _("My name: {}").format(name)
 def _(msg: str, *, context=None) -> str:
-    dic = [('BTC', 'LTC'), ('Bitcoin', 'Litecoin'), ('bitcoin', 'litecoin'), ('比特币', '莱特币')]
+    dic = [('BTC', 'AEGS'), ('Bitcoin', 'Aegisum'), ('bitcoin', 'aegisum'), ('比特币', '埃吉苏姆')]
     if msg == "":
         return ""  # empty string must not be translated. see #7158
-    # litecoin: replace bitcoin strings w/ litecoin strings
+    # aegisum: replace bitcoin strings w/ aegisum strings
     for b, l in dic:
         msg = msg.replace(l, b)
     global language
