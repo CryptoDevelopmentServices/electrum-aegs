@@ -883,30 +883,14 @@ def age(
             return _("in over {} years").format(round(distance_in_minutes / 525600))
 
 mainnet_block_explorers = {
-    'Litecoin Space': ('https://litecoinspace.org/',
-                        {'tx': 'tx/', 'addr': 'address/'}),
-    'Bitaps.com': ('https://ltc.bitaps.com/',
-                   {'tx': '', 'addr': ''}),
-    'Blockchair.com': ('https://blockchair.com/litecoin/',
-                       {'tx': 'transaction/', 'addr': 'address/'}),
-    'Blockchair.com (Tor)': ('http://blkchairbknpn73cfjhevhla7rkp4ed5gg2knctvv7it4lioy22defid.onion/litecoin/',
-                             {'tx': 'transaction/', 'addr': 'address/'}),
-    'BlockCypher.com': ('https://live.blockcypher.com/ltc/',
-                        {'tx': 'tx/', 'addr': 'address/'}),
-    'SoChain': ('https://chain.so/',
-                {'tx': 'tx/LTC/', 'addr': 'address/LTC/'}),
-    'system default': ('blockchain://12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2/',
+    'Aegisum Explorer': ('https://explorer.aegisum.com/',
+                        {'tx': 'transaction/', 'addr': 'address/'}),
+    'system default': ('blockchain://d01de46801bba7913c039b4feabb42878e0a3e24ceef2365ed2a8d780c5aa9cd/',
                        {'tx': 'tx/', 'addr': 'address/'}),
 }
 
 testnet_block_explorers = {
-    'Litecoin Space': ('https://litecoinspace.org/testnet/',
-                        {'tx': 'tx/', 'addr': 'address/'}),
-    'Bitaps.com': ('https://tltc.bitaps.com/',
-                   {'tx': '', 'addr': ''}),
-    'SoChain': ('https://chain.so/',
-                {'tx': 'tx/LTCTEST/', 'addr': 'address/LTCTEST/'}),
-    'system default': ('blockchain://4966625a4b2851d9fdee139e56211a0d88575f59ed816ff5e6a63deb4e3e29a0/',
+    'system default': ('blockchain://150d58fcb28f605e98d9d8de663b734e24f2bdab5e0f39223010bfb583762df1/',
                        {'tx': 'tx/', 'addr': 'address/'}),
 }
 
